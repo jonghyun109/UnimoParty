@@ -8,6 +8,7 @@ public class EnemyPool : MonoBehaviour
 
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject enemySpwanPos;
+    [SerializeField] private GameObject InitCount;
 
     Queue<Enemy> enemyUnitPool = new Queue<Enemy>();
 

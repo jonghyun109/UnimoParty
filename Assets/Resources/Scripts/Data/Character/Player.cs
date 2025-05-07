@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, InterfaceMethod.TableData
+public class Player : MonoBehaviour, InterfaceMethod.TableData
 {
     public int INDEX { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
