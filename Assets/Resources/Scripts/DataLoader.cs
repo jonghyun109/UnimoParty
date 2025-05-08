@@ -10,7 +10,7 @@ public class DataLoader : MonoBehaviour
     public Dictionary<string, List<InterfaceMethod.TableData>> data = new Dictionary<string, List<InterfaceMethod.TableData>>()
     {
         { "Enemy", new List<InterfaceMethod.TableData>()},
-        { "Player", new List<InterfaceMethod.TableData>()},
+        { "UserPlayer", new List<InterfaceMethod.TableData>()},
     };
 
     void Awake()
@@ -43,11 +43,11 @@ public class DataLoader : MonoBehaviour
                     }
                     break;
 
-                case "Player":
+                case "UserPlayer":
                     for (int i = 1; i < lines.Length - 1; i++)
                     {
                         string[] values = lines[i].Split(',');
-                        Player characterData = new Player();
+                        UserPlayer characterData = new UserPlayer();
 
                         item.Value.Add(characterData);
                     }

@@ -7,7 +7,7 @@ public class IngameObserver : MonoBehaviour
 {
     public event Action<DataCenter> OnGameDataChange;
 
-    public Player UserPlayer { get; private set; }
+    public UserPlayer UserPlayer { get; private set; }
     private DataCenter gamedata = new DataCenter(3, 0);
 
     public void ResetData()
