@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎮 유니모 별모험 VR
+# [<img src="https://github.com/user-attachments/assets/6456329a-bada-41c9-abde-3a8b4c2a8e18" alt="YouTube" width="60" />](https://www.youtube.com/watch?v=CY5KfPY-0xk)  Unimo Party VR
 
 ### 우주선을 직접 조종해 광물을 채굴하면서 적을 피하는 VR 닷지 액션!
 
