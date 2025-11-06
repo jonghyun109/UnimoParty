@@ -1,6 +1,7 @@
 <div align="center">
 
-# [<img src="https://github.com/user-attachments/assets/6456329a-bada-41c9-abde-3a8b4c2a8e18" alt="YouTube" width="60" />](https://www.youtube.com/watch?v=CY5KfPY-0xk)  Unimo Party VR
+
+# [<img width="60" height="60" alt="Youtube_logo" src="https://github.com/user-attachments/assets/8e31fdca-af1b-4ebc-b2c9-cdb9983454b4" />](https://www.youtube.com/watch?v=CY5KfPY-0xk)  Unimo Party VR
 
 ### 우주선을 직접 조종해 광물을 채굴하면서 적을 피하는 VR 닷지 액션!
 
