@@ -1,199 +1,419 @@
-# YJH Scripts
+<div align="center">
 
-UnimoParty 프로젝트의 YJH 폴더 스크립트 모음입니다.
+# 🎮 유니모 별모험 VR
 
-## 📁 스크립트 목록
+### 우주선을 직접 조종해 광물을 채굴하면서 적을 피하는 VR 닷지 액션!
 
-### 🎵 오디오 시스템
-#### [`AudioManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/AudioManager.cs)
-- **기능**: BGM 및 SFX를 관리하는 싱글톤 오디오 매니저
-- **주요 메서드**:
-  - `PlayBGM(string name)`: BGM 재생
-  - `PlaySFX(string name)`: 효과음 재생
-  - `SetBGMVolume(float v)`: BGM 볼륨 조절
-  - `SetSFXVolume(float v)`: SFX 볼륨 조절
-- **특징**: DontDestroyOnLoad로 씬 전환 시에도 유지됨
+<br>
 
----
+![원작 게임 플레이]<img width="600" height="337" alt="image (1)" src="https://github.com/user-attachments/assets/0f1f81e4-0de6-4bc6-9eec-13d52e7a3806" /> ![게임 로고]<img width="460" height="215" alt="image" src="https://github.com/user-attachments/assets/5f71340c-91e1-4dc4-98a7-79a91a539bde" />![VR 플레이]<img width="1182" height="734" alt="image (2)" src="https://github.com/user-attachments/assets/d3f58447-3dea-4cda-9b0f-e1dfce4bed15" />
 
-### 🔐 인증 및 데이터베이스
-#### [`FirebaseAuthMgr.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/FirebaseAuthMgr.cs)
-- **기능**: Firebase 인증 및 실시간 데이터베이스 관리
-- **주요 기능**:
-  - 이메일/비밀번호 기반 회원가입 및 로그인
-  - 닉네임 설정 및 관리
-  - 유저 데이터 저장/로드 (게임 머니 등)
-- **주요 메서드**:
-  - `Login()`: 로그인 처리
-  - `Register()`: 회원가입 처리
-  - `SaveUserData<T>()`: 유저 데이터 저장
-  - `LoadUserDataAsync<T>()`: 유저 데이터 로드
+
+
+
+<br>
+
+⭐ **원작 유니모 별모험을 기업과 협업하여 리메이크 하였음**
+
+⭐ **기본적인 탑뷰, 솔로 게임에서 1인칭 멀티 게임으로 전환하여 게임의 스릴감과 재미를 극대화 한게 특징**
+
+</div>
+
+<br>
+<br>
+<br>
 
 ---
 
-### 🎮 플레이어 이동 및 컨트롤
-#### [`JoystickController.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/JoystickController.cs)
-- **기능**: VR 조이스틱을 이용한 플레이어 이동 컨트롤
-- **특징**:
-  - XR Joystick을 사용한 전후좌우 이동
-  - IFreeze 인터페이스 구현 (얼음 폭탄 등에 의한 이동 정지)
-  - 조이스틱 선택 시 컨트롤러 모델 전환
-- **주요 메서드**:
-  - `OnJoystickMoveY(float value)`: 전후 이동
-  - `OnJoystickMoveX(float value)`: 좌우 이동
-  - `Freeze(bool IsFreeze)`: 이동 정지/해제
+<br>
+<br>
 
-#### [`HeadDash.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/HeadDash.cs)
-- **기능**: VR 헤드셋 기울임으로 대시하는 기능
-- **특징**:
-  - 헤드셋을 일정 각도 이상 기울이면 해당 방향으로 대시
-  - 쿨다운 시스템 포함
-  - IFreeze 인터페이스 구현
-- **주요 속성**:
-  - `dashAngle`: 대시 발동 각도 (기본 30도)
-  - `dashDistance`: 대시 거리
-  - `dashCooldown`: 쿨다운 시간
+# 📁 YJH Scripts
 
----
+> UnimoParty 프로젝트의 YJH 폴더 스크립트 모음입니다.
 
-### 🔄 플레이어 회전 시스템
-#### [`PlayerRotateSet.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PlayerRotateSet.cs)
-- **기능**: 플레이어 시야에 따른 우주선 회전 (제한 범위 기반)
-- **특징**:
-  - 카메라가 좌우 60도 범위를 벗어나면 자동으로 우주선 회전
-  - 범위 안으로 돌아오면 회전 멈춤
+<br>
+<br>
 
-#### [`RotateSetting.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/RotateSetting.cs)
-- **기능**: 카메라 방향에 따른 우주선 회전 설정
-- **특징**: 
-  - 카메라 각도가 60도 이상 벗어나면 회전 시작
-  - PlayerRotateSet과 유사하지만 다른 로직 구현
+## 🎵 오디오 시스템
+
+<br>
+
+### [`AudioManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/AudioManager.cs)
+
+**💡 기능**: BGM 및 SFX를 관리하는 싱글톤 오디오 매니저
+
+**📌 주요 메서드**:
+- `PlayBGM(string name)`: BGM 재생
+- `PlaySFX(string name)`: 효과음 재생
+- `SetBGMVolume(float v)`: BGM 볼륨 조절
+- `SetSFXVolume(float v)`: SFX 볼륨 조절
+
+**✨ 특징**: DontDestroyOnLoad로 씬 전환 시에도 유지됨
+
+<br>
+<br>
 
 ---
 
-### 🏠 로비 및 매치메이킹
-#### [`LobbyManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/LobbyManager.cs)
-- **기능**: 로비 UI 관리 및 Photon 네트워크 매치메이킹 시스템
-- **주요 기능**:
-  - PVE/PVP 모드 선택
-  - 방 생성 및 참가
-  - 코드를 통한 방 입장
-  - 자동 매치메이킹 시스템
-  - Ready 시스템 및 게임 시작
-- **주요 메서드**:
-  - `CreatRoom()`: 방 생성
-  - `MatchmakingButton()`: 매치메이킹 시작/중지
-  - `CodeJoinRoom()`: 코드로 방 입장
-  - `StartGameButton()`: 게임 시작
+<br>
+<br>
 
-#### [`TestPvP.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/TestPvP.cs)
-- **기능**: 개발자/디자이너용 PvP 테스트 로비
-- **특징**: 
-  - 개발팀과 디자인팀 전용 테스트 룸
-  - 간단한 방 생성 및 게임 시작 기능
+## 🔐 인증 및 데이터베이스
 
----
+<br>
 
-### 👤 플레이어 설정 및 UI
-#### [`PlayerPanel.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PlayerPanel.cs)
-- **기능**: 로비에서 플레이어 패널 UI 관리
-- **표시 정보**:
-  - 닉네임
-  - Ready 상태
-  - 방장 여부
+### [`FirebaseAuthMgr.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/FirebaseAuthMgr.cs)
 
-#### [`PlayerAvatarSetup.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PlayerAvatarSetup.cs)
-- **기능**: 인게임에서 플레이어 캐릭터 및 우주선 설정
-- **특징**:
-  - Photon RPC를 통한 네트워크 동기화
-  - 캐릭터와 우주선 인덱스 기반 생성
-  - 로컬 플레이어의 캐릭터는 렌더러 비활성화 (1인칭 시점)
+**💡 기능**: Firebase 인증 및 실시간 데이터베이스 관리
+
+**📌 주요 기능**:
+- 이메일/비밀번호 기반 회원가입 및 로그인
+- 닉네임 설정 및 관리
+- 유저 데이터 저장/로드 (게임 머니 등)
+
+**📌 주요 메서드**:
+- `Login()`: 로그인 처리
+- `Register()`: 회원가입 처리
+- `SaveUserData<T>()`: 유저 데이터 저장
+- `LoadUserDataAsync<T>()`: 유저 데이터 로드
+
+<br>
+<br>
 
 ---
 
-### ⚙️ 옵션 시스템
-#### [`OptionManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/OptionManager.cs)
-- **기능**: 게임 옵션 UI 관리 및 설정 저장/로드
-- **옵션 항목**:
-  - Vignette 크기 (멀미 방지)
-  - BGM 볼륨
-  - SFX 볼륨
-  - 회전 방식 (Smooth/Snap)
-  - Snap 회전 각도 (30/60/90도)
-  - Smooth 회전 속도
-- **주요 메서드**:
-  - `OptionSave()`: PlayerPrefs에 옵션 저장
-  - `OptionLoad()`: PlayerPrefs에서 옵션 로드
-  - `ValueChange()`: 슬라이더 값 변경 시 실시간 적용
+<br>
+<br>
 
-#### [`OptionData.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/OptionData.cs)
-- **기능**: 옵션 데이터를 저장하는 정적 클래스
-- **특징**: 씬 간 옵션 데이터 공유
+## 🎮 플레이어 이동 및 컨트롤
 
-#### [`LoadPlayerSetting.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/LoadPlayerSetting.cs)
-- **기능**: 인게임 시작 시 저장된 플레이어 옵션 설정 로드
-- **적용 항목**:
-  - Vignette 크기
-  - 회전 방식 및 속도
+<br>
 
----
+### [`JoystickController.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/JoystickController.cs)
 
-### 🛒 상점 시스템
-#### [`ShopManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/ShopManager.cs)
-- **기능**: 캐릭터 및 우주선 상점 관리
-- **주요 기능**:
-  - 캐릭터 및 우주선 미리보기
-  - 구매 시스템 (Firebase 연동)
-  - 구매 정보 저장 및 로드
-  - 선택한 캐릭터/우주선 정보를 Photon CustomProperties에 저장
-- **주요 메서드**:
-  - `CharacterPreview(int index)`: 캐릭터 미리보기
-  - `ShipPreview(int index)`: 우주선 미리보기
-  - `BuyShip(SpaceShip selectedShip)`: 우주선 구매
-  - `SaveSelectedIndices()`: 선택 정보 저장
+**💡 기능**: VR 조이스틱을 이용한 플레이어 이동 컨트롤
 
----
+**✨ 특징**:
+- XR Joystick을 사용한 전후좌우 이동
+- IFreeze 인터페이스 구현 (얼음 폭탄 등에 의한 이동 정지)
+- 조이스틱 선택 시 컨트롤러 모델 전환
 
-### 🎮 게임플레이
-#### [`SpawnTest.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/SpawnTest.cs)
-- **기능**: PVE 모드 몬스터 스폰 시스템
-- **특징**:
-  - 마스터 클라이언트만 스폰 관리
-  - Photon RPC를 통한 네트워크 동기화
-  - 지정된 영역 내 랜덤 위치 스폰
-  - 게임 종료 시 자동으로 스폰 중지
-- **주요 속성**:
-  - `spawnList`: 스폰할 프리팹과 개수 리스트
-  - `areaCenter/areaSize`: 스폰 영역 설정
+**📌 주요 메서드**:
+- `OnJoystickMoveY(float value)`: 전후 이동
+- `OnJoystickMoveX(float value)`: 좌우 이동
+- `Freeze(bool IsFreeze)`: 이동 정지/해제
+
+<br>
+
+### [`HeadDash.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/HeadDash.cs)
+
+**💡 기능**: VR 헤드셋 기울임으로 대시하는 기능
+
+**✨ 특징**:
+- 헤드셋을 일정 각도 이상 기울이면 해당 방향으로 대시
+- 쿨다운 시스템 포함
+- IFreeze 인터페이스 구현
+
+**📌 주요 속성**:
+- `dashAngle`: 대시 발동 각도 (기본 30도)
+- `dashDistance`: 대시 거리
+- `dashCooldown`: 쿨다운 시간
+
+<br>
+<br>
 
 ---
 
-### 📦 기타
-#### [`FakeRoom.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/FakeRoom.cs)
-- **기능**: 방과 플레이어 정보를 담는 데이터 클래스
-- **용도**: 테스트 또는 UI 표시용 가상 방 데이터
+<br>
+<br>
 
-#### [`PrefabCache.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PrefabCache.cs)
-- **상태**: 빈 스크립트 (미구현)
+## 🔄 플레이어 회전 시스템
+
+<br>
+
+### [`PlayerRotateSet.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PlayerRotateSet.cs)
+
+**💡 기능**: 플레이어 시야에 따른 우주선 회전 (제한 범위 기반)
+
+**✨ 특징**:
+- 카메라가 좌우 60도 범위를 벗어나면 자동으로 우주선 회전
+- 범위 안으로 돌아오면 회전 멈춤
+
+<br>
+
+### [`RotateSetting.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/RotateSetting.cs)
+
+**💡 기능**: 카메라 방향에 따른 우주선 회전 설정
+
+**✨ 특징**: 
+- 카메라 각도가 60도 이상 벗어나면 회전 시작
+- PlayerRotateSet과 유사하지만 다른 로직 구현
+
+<br>
+<br>
 
 ---
+
+<br>
+<br>
+
+## 🏠 로비 및 매치메이킹
+
+<br>
+
+### [`LobbyManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/LobbyManager.cs)
+
+**💡 기능**: 로비 UI 관리 및 Photon 네트워크 매치메이킹 시스템
+
+**📌 주요 기능**:
+- PVE/PVP 모드 선택
+- 방 생성 및 참가
+- 코드를 통한 방 입장
+- 자동 매치메이킹 시스템
+- Ready 시스템 및 게임 시작
+
+**📌 주요 메서드**:
+- `CreatRoom()`: 방 생성
+- `MatchmakingButton()`: 매치메이킹 시작/중지
+- `CodeJoinRoom()`: 코드로 방 입장
+- `StartGameButton()`: 게임 시작
+
+<br>
+
+### [`TestPvP.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/TestPvP.cs)
+
+**💡 기능**: 개발자/디자이너용 PvP 테스트 로비
+
+**✨ 특징**: 
+- 개발팀과 디자인팀 전용 테스트 룸
+- 간단한 방 생성 및 게임 시작 기능
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## 👤 플레이어 설정 및 UI
+
+<br>
+
+### [`PlayerPanel.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PlayerPanel.cs)
+
+**💡 기능**: 로비에서 플레이어 패널 UI 관리
+
+**📌 표시 정보**:
+- 닉네임
+- Ready 상태
+- 방장 여부
+
+<br>
+
+### [`PlayerAvatarSetup.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PlayerAvatarSetup.cs)
+
+**💡 기능**: 인게임에서 플레이어 캐릭터 및 우주선 설정
+
+**✨ 특징**:
+- Photon RPC를 통한 네트워크 동기화
+- 캐릭터와 우주선 인덱스 기반 생성
+- 로컬 플레이어의 캐릭터는 렌더러 비활성화 (1인칭 시점)
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## ⚙️ 옵션 시스템
+
+<br>
+
+### [`OptionManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/OptionManager.cs)
+
+**💡 기능**: 게임 옵션 UI 관리 및 설정 저장/로드
+
+**📌 옵션 항목**:
+- Vignette 크기 (멀미 방지)
+- BGM 볼륨
+- SFX 볼륨
+- 회전 방식 (Smooth/Snap)
+- Snap 회전 각도 (30/60/90도)
+- Smooth 회전 속도
+
+**📌 주요 메서드**:
+- `OptionSave()`: PlayerPrefs에 옵션 저장
+- `OptionLoad()`: PlayerPrefs에서 옵션 로드
+- `ValueChange()`: 슬라이더 값 변경 시 실시간 적용
+
+<br>
+
+### [`OptionData.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/OptionData.cs)
+
+**💡 기능**: 옵션 데이터를 저장하는 정적 클래스
+
+**✨ 특징**: 씬 간 옵션 데이터 공유
+
+<br>
+
+### [`LoadPlayerSetting.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/LoadPlayerSetting.cs)
+
+**💡 기능**: 인게임 시작 시 저장된 플레이어 옵션 설정 로드
+
+**📌 적용 항목**:
+- Vignette 크기
+- 회전 방식 및 속도
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## 🛒 상점 시스템
+
+<br>
+
+### [`ShopManager.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/ShopManager.cs)
+
+**💡 기능**: 캐릭터 및 우주선 상점 관리
+
+**📌 주요 기능**:
+- 캐릭터 및 우주선 미리보기
+- 구매 시스템 (Firebase 연동)
+- 구매 정보 저장 및 로드
+- 선택한 캐릭터/우주선 정보를 Photon CustomProperties에 저장
+
+**📌 주요 메서드**:
+- `CharacterPreview(int index)`: 캐릭터 미리보기
+- `ShipPreview(int index)`: 우주선 미리보기
+- `BuyShip(SpaceShip selectedShip)`: 우주선 구매
+- `SaveSelectedIndices()`: 선택 정보 저장
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## 🎮 게임플레이
+
+<br>
+
+### [`SpawnTest.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/SpawnTest.cs)
+
+**💡 기능**: PVE 모드 몬스터 스폰 시스템
+
+**✨ 특징**:
+- 마스터 클라이언트만 스폰 관리
+- Photon RPC를 통한 네트워크 동기화
+- 지정된 영역 내 랜덤 위치 스폰
+- 게임 종료 시 자동으로 스폰 중지
+
+**📌 주요 속성**:
+- `spawnList`: 스폰할 프리팹과 개수 리스트
+- `areaCenter/areaSize`: 스폰 영역 설정
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## 📦 기타
+
+<br>
+
+### [`FakeRoom.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/FakeRoom.cs)
+
+**💡 기능**: 방과 플레이어 정보를 담는 데이터 클래스
+
+**✨ 용도**: 테스트 또는 UI 표시용 가상 방 데이터
+
+<br>
+
+### [`PrefabCache.cs`](https://github.com/jonghyun109/UnimoParty/blob/Develop_main/Assets/Scripts/YJH/PrefabCache.cs)
+
+**⚠️ 상태**: 빈 스크립트 (미구현)
+
+<br>
+<br>
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
 
 ## 🔧 주요 기술 스택
-- **Unity XR Interaction Toolkit**: VR 인터랙션
-- **Photon PUN2**: 멀티플레이어 네트워킹
-- **Firebase**: 인증 및 데이터베이스
-- **TextMeshPro**: UI 텍스트
+
+<br>
+
+- 🎯 **Unity XR Interaction Toolkit**: VR 인터랙션
+- 🌐 **Photon PUN2**: 멀티플레이어 네트워킹
+- 🔥 **Firebase**: 인증 및 데이터베이스
+- 📝 **TextMeshPro**: UI 텍스트
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
 
 ## 📝 참고사항
+
+<br>
+
+💡 **멀티플레이어**
 - 대부분의 스크립트가 Photon PUN2를 사용하여 멀티플레이어 기능 구현
+
+💡 **상태 이상 효과**
 - IFreeze 인터페이스를 통해 얼음 폭탄 등의 상태 이상 효과 구현
+
+💡 **데이터 지속성**
 - DontDestroyOnLoad 패턴을 사용하여 씬 전환 시에도 데이터 유지
 
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+
+<div align="center">
 
 ## 👨‍💻 개발자
-YJH (윤정환)
 
----
+<br>
 
-**Note**: 모든 스크립트 링크는 [GitHub 저장소](https://github.com/jonghyun109/UnimoParty)에서 확인할 수 있습니다.
+**YJH (윤종현)**
+
+<br>
+<br>
+
+[![GitHub](https://img.shields.io/badge/GitHub-jonghyun109-181717?style=for-the-badge&logo=github)](https://github.com/jonghyun109/UnimoParty)
+
+<br>
+
+**📌 모든 스크립트 링크는 위의 GitHub 저장소에서 확인할 수 있습니다.**
+
+</div>
+
+<br>
+<br>
+
