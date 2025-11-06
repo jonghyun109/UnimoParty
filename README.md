@@ -9,20 +9,17 @@
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="<img width="600 height="337" alt="image (1)" src="https://github.com/user-attachments/assets/5c728b91-60a0-49e9-af64-751164c919ec" />
-" alt="원작 게임 플레이" width="100%"/>
+      <img src="https://github.com/user-attachments/assets/5c728b91-60a0-49e9-af64-751164c919ec" alt="원작 게임 플레이" width="100%"/>
       <br/>
       <b>원작 게임 플레이</b>
     </td>
     <td align="center" width="33%">
-      <img src="<img width="460 height="215" alt="image" src="https://github.com/user-attachments/assets/350b93a3-45a6-4b82-bc8f-8f409e8557b4" />
-" alt="게임 로고" width="100%"/>
+      <img src="https://github.com/user-attachments/assets/350b93a3-45a6-4b82-bc8f-8f409e8557b4" alt="게임 로고" width="100%"/>
       <br/>
       <b>게임 로고</b>
     </td>
     <td align="center" width="33%">
-      <img src="<img width="1182 height="734" alt="image (2)" src="https://github.com/user-attachments/assets/c04bed13-8672-4e3a-9b9a-4c8797620eaf" />
-" alt="VR 플레이" width="100%"/>
+      <img src="https://github.com/user-attachments/assets/c04bed13-8672-4e3a-9b9a-4c8797620eaf" alt="VR 플레이" width="100%"/>
       <br/>
       <b>VR 플레이</b>
     </td>
@@ -31,7 +28,7 @@
 
 
 
-
+<br>
 <br>
 
 ⭐ **원작 유니모 별모험을 기업과 협업하여 리메이크 하였음**
